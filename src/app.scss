@@ -1,0 +1,60 @@
+@use "./styles/index.scss";
+
+.app {
+    .swiper {
+        overflow: hidden;
+        position: relative;
+
+        .swiper-wrapper {
+            will-change: transform;
+            display: flex;
+            transition-duration: 0ms;
+            transform: translateX(0px);
+
+            .swiper-slide {
+                flex-shrink: 0;
+                height: 50vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3rem;
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            color: #007AFF;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.4;
+                color: #A6D1FF;
+            }
+
+            &::after {
+                font-family: "Font Awesome 6 Free";
+                font-size: 3rem;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 10px;
+
+            &::after {
+                content: "\f053";
+            }
+        }
+
+        .swiper-button-next {
+            right: 10px;
+
+            &::after {
+                content: "\f054";
+            }
+        }
+    }
+}
